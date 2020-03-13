@@ -2,76 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Assignment 3 COMP1223">
-    <meta name="keywords" content="HTML,CSS, blog as tutorial website">
-    <meta name="author" content="Jolene">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="NgaLe">
     <link rel="stylesheet" href="style.css">
-    <title>Assignment 3</title>
+    <title>BigMart Data</title>
 </head>
 <body>
-<!--Header-->
+<script src="javascript.js"></script>
 <header>
-    <h1><b>Jolene's blog</b></h1>
-    <p>Welcome to blog of <span class="tag">Jolene</span> </p>
+    <h1><b>Big Mart Sales dataset</b></h1>
+    <p>Sales insight <span class="tag">analyzing</span> </p>
 </header>
+
 
 <main>
 
     <aside>
-        <div class="aside-title">
-            <a href="index.html">
-                <h1><strong>Posts</strong></h1>
-            </a>
-        </div>
-        <ul class="aside-list">
-            <li class="aside-post">
-                <a href="page1.html">
-                    <img src="img/art.JPG" alt="Your Art" class="aside-img">
-                    <span class="aside-large">How to build your art space</span><br>
+            <div class="aside-title">
+                <a href="index.html">
+                    <h4><strong>Analyzing attributes</strong></h4>
                 </a>
-            </li>
-            <li class="aside-post">
-                <a href="page2.html">
-                    <img src="img/cam.JPG" alt="P-mode" class="aside-img">
-                    <span class="aside-large">How to use a DSLR on P-mode</span><br>
-                </a>
-            </li>
-
-        </ul>
+            </div>
+            <ul class="aside-list">
+                <li class="aside-post">
+                        <span class="aside-large">Item Attributes</span><br>
+                </li>
+                <li class="aside-post">
+                        <span class="aside-large">Outlet Attributes</span><br>
+                </li>
+    
+            </ul>
     </aside>
 
-            <!--Blog Entry 1-->
-    <article class="entry-1" style="background-image:url(img/art.JPG)">
+    <article class="entry-1">
+        
         <section class="entry-title">
-            <h2><b>How to build your own art space</b></h2>
-            <h3>It's not about brushes or easel. It's about how you feel art inside your heart<span class="date">December 10, 2017</span></h3>
+            <p>This is a data analytics system based on a <span class="date"><a href ="https://www.kaggle.com/brijbhushannanda1979/bigmart-sales-data" target="_blank">Big Mart Sales</a></span> dataset.The system provides a Web service allowing users to interactively slice and dice the sale volume by product attributes and outlet attributes. When an attribute is selected, the Web service visualizes the relationship between the attribute values and the sale volume.
+            </p>
         </section>
+
         <div class="entry-text">
-            <p>Step by step to your heart.</p>
-            <a href="page1.html"><b>READ MORE »</b></a>
+                <h2><b>Item attributes</b></h2>
+
+            <p id="item_text"></p>
+            <form name="item_form" method="POST" id="item_form">
+            <select id="item_select" name="item_select" onchange="photo_change()">
+                <option value="" disabled selected style="display:none">Item variables</option>
+                <option value="The relationship between attributes Item_Fat_Content and the Item_Outlet_Sales. It shows the average sales based on per type fat content" rel="img/item/Item_Fat_Content.bmp" >Item Fat Content</option>
+                <option value="The relationship between attributes Item_Identifier and the Item_Outlet_Sales. It shows the average sales of different item identifiers" rel="img/item/Item_Identifier.bmp" >Item Identifier</option>
+                <option value="The relationship between attributes Item_MRP and the Item_Outlet_Sales. It visualizes the average sales based on MRP ranges" rel="img/item/Item_MRP.bmp" >Item MRP</option>
+                <option value="The relationship between attributes Item_Type and the Item_Outlet_Sales. It shows the average sales of different item types" rel="img/item/Item_Type.bmp" >Item Type</option>
+                <option value="The relationship between attributes Item_Visibility and the Item_Outlet_Sales. It visualizes the average sales of four divided levels of Item Visibility" rel="img/item/Item_Visibility.bmp" >Item Visibility</option>
+                <option value="The relationship between attributes Item_Visibility and the Item_Outlet_Sales. It shows the average sales based on Item Weight ranges" rel="img/item/Item_Weight.bmp" >Item Weight</option>
+            </select>
+            </form>
+            <img src = "img/item/Item_Fat_Content.bmp" id = "img_item"/> 
+
         </div>
+
+        <div class="entry-text">
+                <h2><b>Outlet attributes</b></h2>
+                <p id="outlet_text"></p>
+            <form name="outlet_form" method="POST" id="outlet_form">
+            <select id="outlet_select" name="outlet_select" onchange="photo_change2()">
+                <option value="" disabled selected style="display:none">Outlet Variables</option>
+                <option value="The relationship between attributes Outlet_Establishment_Year and the Item_Outlet_Sales. It shows the average sales based on Outlet Establishment Years" rel="img/outlet/Outlet_Establishment_Year.bmp" >Outlet Establishment Year</option>
+                <option value="The relationship between attributes Outlet_Identifier and the Item_Outlet_Sales. It shows the average sales based on Outlet Identifiers" rel="img/outlet/Outlet_Identifier.bmp" >Outlet Identifier</option>
+                <option value="The relationship between attributes Outlet_Location_Type and the Item_Outlet_Sales. It shows the average sales based on Outlet Location Types" rel="img/outlet/Outlet_Location_Type.bmp" >Output Location Type</option>
+                <option value="The relationship between attributes Outlet_Size and the Item_Outlet_Sales. It shows the average sales based on Outlet Sizes" rel="img/outlet/Outlet_Size.bmp" >Outlet Size</option>
+                <option value="The relationship between attributes Outlet_Type and the Item_Outlet_Sales. It shows the average sales based on Outlet Types" rel="img/outlet/Outlet_Type.bmp" >Outlet Type</option>
+            </select>
+            </form>
+            <img src = "img/outlet/Outlet_Establishment_Year.bmp" id = "img_outlet"/> 
+
+        </div>
+            
     </article>
 
-    <!--Blog Entry 2-->
-    <article class="entry-2" style="background-image:url(img/cam.JPG)">
-        <section class="entry-title">
-            <h2>How to use a DSLR on P-mode </h2>
-            <h3>Programmed Mode: The best underrated assistant <span class="date">December 10, 2017</span></h3>
-        </section>
-        <div class="entry-text">
-            <p>The Programmed Mode (P) is usually confused with the infamous Automatic mode (Auto) and it’s often being looked down on, but many people can’t differentiate the two. In common sense, the camera manufacturers are not stupid to include two identical functions into the same product for nothing.</p>
-            <a href="page2.html"><b>READ MORE »</b></a>
-        </div>
-    </article>
-
+    
 </main>
 
 <footer class="footer">
-    <p><a href="#" target="_blank">About me</a></p>
     <p><a href="#" target="_blank">Contact</a></p>
     <p>&copy; 2017</p>
 </footer>
 
 </body>
-<script src=http://my.gblearn.com/js/loadscript.js></script>
 </html>
